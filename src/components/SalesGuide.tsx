@@ -9,21 +9,20 @@ export function SalesGuide() {
   const strategy = businessType ? getStrategy(businessType) : null;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
-      <aside className="lg:sticky lg:top-6 lg:self-start">
-        <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <BusinessSelector
-            value={businessType}
-            options={BUSINESS_TYPES}
-            onChange={setBusinessType}
-          />
-        </div>
-      </aside>
+    <div className="mx-auto max-w-2xl space-y-6">
+      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+        <BusinessSelector
+          value={businessType}
+          options={BUSINESS_TYPES}
+          onChange={setBusinessType}
+          label="Επίλεξε τύπο επιχείρησης"
+        />
+      </div>
 
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3 sm:gap-4">
         {!strategy && (
-          <p className="rounded-xl border border-dashed border-slate-300 bg-slate-50/50 px-4 py-8 text-center text-slate-500">
-            Επίλεξε τύπο επιχείρησης για να εμφανιστούν οι στρατηγικές.
+          <p className="rounded-xl border border-dashed border-slate-200 bg-slate-50/80 px-4 py-6 text-center text-sm text-slate-500 sm:py-8">
+            Πληκτρολόγησε ή διάλεξε τύπο επιχείρησης για να εμφανιστούν οι στρατηγικές.
           </p>
         )}
 
